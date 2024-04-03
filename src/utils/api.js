@@ -1,4 +1,4 @@
-const baseUrl = 'https://stage.freeci.ci'
+const baseUrl = 'https://freeci.ci'
 const apiRoutes = {
   'analyst.variants': baseUrl + '/api/all-variants',
   'analyst.variants.today': baseUrl + '/api/all-variants-today',
