@@ -51,7 +51,7 @@ let chartOptions = ref({
 })
 let gFreelancer = () => {
   axios
-    .get(apiRoutes['gfreelancer'])
+    .get(apiRoutes['gcontract'])
     .then(function (response) {
       dataGFreelancer.value = response.data?.data
       loading.value = false
