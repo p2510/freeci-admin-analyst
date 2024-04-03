@@ -2,11 +2,6 @@
 import { ref, onMounted, computed, watch } from 'vue'
 import { apiRoutes, baseUrl } from '../../utils/api.js'
 import axios from 'axios'
-import NothingResource from '@/components/NothingResource.vue'
-import PrimaryBtn from '@/components/PrimaryBtn.vue'
-import SecondaryBtn from '@/components/SecondaryBtn.vue'
-import SkeletonUser from '@/components/SkeletonUser.vue'
-import { ArrowLeftIcon, ArrowRightIcon, EyeIcon } from '@heroicons/vue/24/outline'
 
 let variants = ref([])
 let loading = ref(true)
@@ -182,7 +177,7 @@ onMounted(() => {
           <li class="rounded-lg bg-gray-600/40 flex justify-between p-2">
             <span class="font-medium text-lg text-slate-100">Abonnement Échoué</span>
             <span class="text-white bg-yellow-500/30 rounded-full flex items-center px-2">{{
-              variants.countFailFSubscription
+              variants.countFailSubscription
             }}</span>
           </li>
           <li class="rounded-lg bg-gray-600/40 flex justify-between p-2">
