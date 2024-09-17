@@ -1,4 +1,4 @@
-const baseUrl = 'https://freeci.ci'
+const baseUrl = 'http://127.0.0.1:8000'
 const apiRoutes = {
   'analyst.variants': baseUrl + '/api/all-variants',
   'analyst.variants.today': baseUrl + '/api/all-variants-today',

@@ -189,5 +189,52 @@ onMounted(() => {
         </ul>
       </div>
     </div>
+    <h3
+      class="mt-8 font-bold text-md sm:text-lg lg:text-xl text-black dark:text-white mb-6 flex justify-between items-center"
+    >
+      Paiment en ligne
+    </h3>
+    <div class="mt-4 grid grid-cols-12 gap-4  overflow-y-scroll h-96">
+      <table
+        class="min-w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 col-span-full relative "
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-300"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3 font-semibold text-start">Email</th>
+            <th scope="col" class="px-6 py-3 font-semibold text-start">Plan</th>
+            <th scope="col" class="px-6 py-3 font-semibold text-start">Statut</th>
+            <th scope="col" class="px-6 py-3 font-semibold text-start">Date transaction</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            v-for="item in variants?.payment"
+            :key="item.id"
+            class="bg-white dark:bg-gray-800 border-b dark:border-gray-600"
+          >
+            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+              {{ item.email }}
+            </td>
+            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+              {{ item.plan }}
+            </td>
+            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+              <span
+                v-if="item.statut == 'valider'"
+                class="bg-green-700/80 p-1 rounded-md text-white"
+                >Payer</span
+              >
+              <span v-else class="bg-red-700/80 p-1 rounded-md text-white">Échec</span>
+            </td>
+            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+              {{ item.created_at }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 </template>
